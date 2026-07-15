@@ -59,9 +59,11 @@
     document.getElementById('splashScreen').style.display = 'none';
     document.getElementById('appIframe').style.display = 'block';
   });
+
   window.addEventListener('message', function(event) {
     var audio = document.getElementById('bgMusic');
-        if (event.data === 'pauseMusic') {
+   
+    if (event.data === 'pauseMusic') {
       audio.pause();
     } 
     else if (event.data === 'playMusic') {
