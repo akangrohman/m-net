@@ -39,7 +39,7 @@
   </audio>
 
   <div id="splashScreen">
-    <h1 style="margin:0; font-size:28px;">M-NET APP</h1>
+    <h1 style="margin:0; font-size:28px;">M-NET</h1>
     <p style="font-size:14px; opacity:0.9;">Ketuk tombol di bawah untuk masuk</p>
     <button class="btn-masuk" id="btnMulai">Masuk Aplikasi</button>
   </div>
@@ -52,15 +52,17 @@
   </iframe>
 
   <script>
-    document.getElementById('btnMulai').addEventListener('click', function() {
-
-      var audio = document.getElementById('bgMusic');
-      audio.volume = 0.3;
+    window.addEventListener('message', function(event) {
+    var audio = document.getElementById('bgMusic');
+    
+    if (event.data === 'pauseMusic') {
+      audio.pause();
+    } 
+ 
+    else if (event.data === 'playMusic') {
       audio.play();
-
-      document.getElementById('splashScreen').style.display = 'none';
-      document.getElementById('appIframe').style.display = 'block';
-    });
+    }
+  });
   </script>
 </body>
 </html>
