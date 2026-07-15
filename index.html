@@ -52,17 +52,22 @@
   </iframe>
 
   <script>
-    window.addEventListener('message', function(event) {
+  document.getElementById('btnMulai').addEventListener('click', function() {
     var audio = document.getElementById('bgMusic');
-    
-    if (event.data === 'pauseMusic') {
+    audio.volume = 0.3;
+    audio.play();
+    document.getElementById('splashScreen').style.display = 'none';
+    document.getElementById('appIframe').style.display = 'block';
+  });
+  window.addEventListener('message', function(event) {
+    var audio = document.getElementById('bgMusic');
+        if (event.data === 'pauseMusic') {
       audio.pause();
     } 
- 
     else if (event.data === 'playMusic') {
       audio.play();
     }
   });
-  </script>
+</script>
 </body>
 </html>
