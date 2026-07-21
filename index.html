@@ -36,7 +36,6 @@
 
   <audio id="bgMusic" loop preload="auto">
     <source src="https://dl.dropboxusercontent.com/scl/fi/03eikgizp3phxi9rzrccb/Al-Waqiah.mp3?rlkey=omjvfvhxy6jl9dq64qmxr4a1l&st=6h2t9rvk&raw=1" type="audio/mpeg">
-
   </audio>
 
   <div id="splashScreen">
@@ -47,7 +46,7 @@
 
   <iframe 
     id="appIframe"
-    allow="autoplay; clipboard-read; clipboard-write; fullscreen" 
+    allow="autoplay; clipboard-read; clipboard-write; fullscreen; web-share" 
     class="full-page-apps-script" 
     src="https://script.google.com/macros/s/AKfycbxetlC_9UmQi2H39onOhdRhElfSqN5xP-tcKkIBJJPikIat5EaBPphwcbbt6Js3Sbqe/exec">
   </iframe>
@@ -63,7 +62,7 @@
 
   window.addEventListener('message', function(event) {
     var audio = document.getElementById('bgMusic');
-   
+    
     if (event.data === 'pauseMusic') {
       audio.pause();
     } 
